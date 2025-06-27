@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python-Zauberer-Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">🧙‍♂️ Python-Zauberer-Quiz</h1>
+            <nav class="nav-buttons">
+                <button id="quiz-btn" class="nav-btn active">Quiz spielen</button>
+                <button id="admin-btn" class="nav-btn">Fragen verwalten</button>
+            </nav>
+        </header>
+
+        <!-- Quiz-Bereich -->
+        <div id="quiz-section" class="section active">
+            <div id="quiz-start" class="quiz-start">
+                <h2>Willkommen zum großen Python-Zauberer-Quiz!</h2>
+                <p>Mal sehen, was du heute gelernt hast.</p>
+                <p>Wähle a, b oder c für deine Antwort.</p>
+                <button id="start-quiz-btn" class="btn btn-primary">Quiz starten</button>
+            </div>
+
+            <div id="quiz-game" class="quiz-game hidden">
+                <div class="quiz-header">
+                    <span id="question-counter" class="question-counter">Frage 1 von 6</span>
+                    <span id="score" class="score">Punkte: 0</span>
+                </div>
+
+                <div id="question-container" class="question-container">
+                    <h3 id="question-text" class="question-text"></h3>
+                    <div id="options-container" class="options-container">
+                        <!-- Optionen werden hier dynamisch eingefügt -->
+                    </div>
+                </div>
+
+                <div class="quiz-controls">
+                    <button id="next-btn" class="btn btn-primary hidden">Nächste Frage</button>
+                </div>
+            </div>
+
+            <div id="quiz-result" class="quiz-result hidden">
+                <h2>Das Quiz ist vorbei!</h2>
+                <div id="final-score" class="final-score"></div>
+                <div id="result-message" class="result-message"></div>
+                <button id="restart-btn" class="btn btn-primary">Nochmal spielen</button>
+            </div>
+        </div>
+
+        <!-- Admin-Bereich -->
+        <div id="admin-section" class="section">
+            <h2>Fragen verwalten</h2>
+
+            <div class="admin-tabs">
+                <button id="add-question-tab" class="tab-btn active">Neue Frage hinzufügen</button>
+                <button id="manage-questions-tab" class="tab-btn">Fragen bearbeiten</button>
+            </div>
+
+            <!-- Neue Frage hinzufügen -->
+            <div id="add-question-panel" class="admin-panel active">
+                <form id="question-form" class="question-form">
+                    <div class="form-group">
+                        <label for="question-input">Frage:</label>
+                        <textarea id="question-input" rows="4" placeholder="Geben Sie hier Ihre Frage ein..."
+                            required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Antwortoptionen:</label>
+                        <div class="options-input">
+                            <input type="text" id="option-a" placeholder="Option A" required>
+                            <input type="text" id="option-b" placeholder="Option B" required>
+                            <input type="text" id="option-c" placeholder="Option C" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correct-answer">Richtige Antwort:</label>
+                        <select id="correct-answer" required>
+                            <option value="">Wählen Sie die richtige Antwort</option>
+                            <option value="a">Option A</option>
+                            <option value="b">Option B</option>
+                            <option value="c">Option C</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Frage hinzufügen</button>
+                </form>
+            </div>
+
+            <!-- Fragen verwalten -->
+            <div id="manage-questions-panel" class="admin-panel">
+                <div class="questions-list">
+                    <h3>Vorhandene Fragen</h3>
+                    <div id="questions-container">
+                        <!-- Fragen werden hier dynamisch eingefügt -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="quiz-data.js"></script>
+    <script src="quiz-app.js"></script>
+</body>
+
+</html>
