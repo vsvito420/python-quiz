@@ -5,7 +5,8 @@
 # print(), Variablen, if/else, Funktionen und sogar eine kleine Klasse!
 
 # --- FRAGE-DATENBANK ---
-# Wir speichern alle Fragen in einer Liste. Jede Frage ist ein "Dictionary",
+# Wir speichern alle Fragen in einer Liste.
+# Jede Frage ist ein "Dictionary",
 # das ist wie eine Schatzkiste mit beschrifteten Fächern.
 fragen = [
     {
